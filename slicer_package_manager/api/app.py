@@ -574,6 +574,8 @@ class App(Resource):
                '(stable, active, etc).', required=False)
         .param('enabled', 'Boolean indicating if the extension should be automatically enabled '
                'after its installation.', required=False)
+        .jsonParam('dicom_support_rule', 'List of rule engine expressions to determine DICOM '
+                   'support level of the extension.', required=False, requireArray=True)
         .errorResponse(),
     )
     @access.user(scope=TokenScope.DATA_WRITE)
@@ -603,6 +605,16 @@ class App(Resource):
         :return: The created/updated extension.
         """
         creator = self.getCurrentUser()
+
+        # Manually extract JSON body parameters (Girder's @jsonParam doesn't inject them)
+        dicom_support_rule = None
+        try:
+            body_json = self.getBodyJson()
+            if body_json:
+                dicom_support_rule = body_json.get('dicom_support_rule')
+        except Exception:
+            pass  # No JSON body or parsing failed, dicom_support_rule remains None
+
         application = Folder().load(app_id, user=creator)
         release_folder = utilities.getOrCreateReleaseFolder(
             application=application,
@@ -657,6 +669,8 @@ class App(Resource):
             params['dependency'] = dependency
         if license:
             params['license'] = license
+        if dicom_support_rule is not None and len(dicom_support_rule) > 0:
+            params['dicom_support_rule'] = dicom_support_rule
 
         name = application['meta']['extensionPackageNameTemplate'].format(**params)
         filters = {

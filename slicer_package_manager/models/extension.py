@@ -101,6 +101,7 @@ class Extension(Item):
                     'contributors',
                     'dependency',
                     'license',
+                    'dicom_support_rule',
                 }
                 if extraMeta - extra_params:
                     msg = f'Extension has extra fields: {", ".join(sorted(extraMeta))}.'
@@ -113,6 +114,9 @@ class Extension(Item):
                             'type': bool,
                             'exception_msg': f'Extension field "{meta}" must be a boolean.',
                         })
+                    elif meta == 'dicom_support_rule':
+                        # dicom_support_rule is now stored as a string (converted from array)
+                        continue
                     else:
                         specs.append({
                             'name': meta,
