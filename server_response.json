@@ -1,0 +1,60 @@
+﻿{
+    "value":  [
+                  {
+                      "_id":  "696013d9ababd9aeb6a7f468",
+                      "baseParentId":  "696013d9ababd9aeb6a7f45f",
+                      "baseParentType":  "collection",
+                      "created":  "2026-01-08T20:30:17.679000+00:00",
+                      "creatorId":  "69385bb8579a5d647931a55a",
+                      "description":  "Extension DICOMwebBrowser",
+                      "folderId":  "696013d9ababd9aeb6a7f464",
+                      "lowerName":  "32516_dicomwebbrowser_linux_amd64_main",
+                      "meta":  {
+                                   "app_id":  "696013d9ababd9aeb6a7f461",
+                                   "app_revision":  "32516",
+                                   "arch":  "amd64",
+                                   "baseName":  "DICOMwebBrowser",
+                                   "category":  "Informatics",
+                                   "description":  "Extension DICOMwebBrowser",
+                                   "os":  "linux",
+                                   "repository_type":  "git",
+                                   "repository_url":  "https://github.com/lassoan/SlicerDICOMwebBrowser",
+                                   "revision":  "main",
+                                   "sha512":  "ddb06f33d5c44766e2059a7e10e0de44c9f9214a2fd9d98218f55865e28c3df42f16138e23380b1349bf778f2b11cec16d07f6fb69d84685a0944d36e94d3c94"
+                               },
+                      "name":  "32516_DICOMwebBrowser_linux_amd64_main",
+                      "size":  32,
+                      "updated":  "2026-01-08T20:30:17.741000+00:00"
+                  },
+                  {
+                      "_id":  "696013d9ababd9aeb6a7f465",
+                      "baseParentId":  "696013d9ababd9aeb6a7f45f",
+                      "baseParentType":  "collection",
+                      "created":  "2026-01-08T20:30:17.533000+00:00",
+                      "creatorId":  "69385bb8579a5d647931a55a",
+                      "description":  "Extension SlicerRT",
+                      "folderId":  "696013d9ababd9aeb6a7f464",
+                      "lowerName":  "32516_slicerrt_linux_amd64_master",
+                      "meta":  {
+                                   "app_id":  "696013d9ababd9aeb6a7f461",
+                                   "app_revision":  "32516",
+                                   "arch":  "amd64",
+                                   "baseName":  "SlicerRT",
+                                   "category":  "Radiotherapy",
+                                   "description":  "Extension SlicerRT",
+                                   "dicom_support_rule":  [
+                                                              "SOPClassUID in [\u00271.2.840.10008.5.1.4.1.1.481.3\u0027, \u00271.2.840.10008.5.1.4.1.1.481.4\u0027] or Modality in [\u0027RTSTRUCT\u0027]"
+                                                          ],
+                                   "os":  "linux",
+                                   "repository_type":  "git",
+                                   "repository_url":  "https://github.com/SlicerRt/SlicerRT.git",
+                                   "revision":  "master",
+                                   "sha512":  "ddb06f33d5c44766e2059a7e10e0de44c9f9214a2fd9d98218f55865e28c3df42f16138e23380b1349bf778f2b11cec16d07f6fb69d84685a0944d36e94d3c94"
+                               },
+                      "name":  "32516_SlicerRT_linux_amd64_master",
+                      "size":  32,
+                      "updated":  "2026-01-08T20:30:17.622000+00:00"
+                  }
+              ],
+    "Count":  2
+}

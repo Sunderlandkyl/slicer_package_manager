@@ -429,6 +429,9 @@ def _cli_deleteDraftRelease(sc: SlicerPackageClient, *args, **kwargs):
 @click.option('--dependency', default=None,
               help='List of the required extensions to use this one.',
               cls=_AdvancedOption)
+@click.option('--can_import_dicom', default=None,
+              help='List of rule engine expressions to determine DICOM support level.',
+              cls=_AdvancedOption)
 @click.option('--coll_id', default=None, envvar='COLLECTION_ID',
               help='ID of an existing collection',
               show_default=True,

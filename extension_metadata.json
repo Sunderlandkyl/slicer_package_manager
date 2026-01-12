@@ -1,0 +1,57 @@
+﻿[
+    {
+        "_id":  "69386c2a248e47cf98621834",
+        "baseParentId":  "69386c2a248e47cf9862182b",
+        "baseParentType":  "collection",
+        "created":  "2025-12-09T18:36:26.902000+00:00",
+        "creatorId":  "69385bb8579a5d647931a55a",
+        "description":  "Extension DICOMwebBrowser",
+        "folderId":  "69386c2a248e47cf98621830",
+        "lowerName":  "32516_dicomwebbrowser_linux_amd64_main",
+        "meta":  {
+                     "app_id":  "69386c2a248e47cf9862182d",
+                     "app_revision":  "32516",
+                     "arch":  "amd64",
+                     "baseName":  "DICOMwebBrowser",
+                     "category":  "Informatics",
+                     "description":  "Extension DICOMwebBrowser",
+                     "os":  "linux",
+                     "repository_type":  "git",
+                     "repository_url":  "https://github.com/lassoan/SlicerDICOMwebBrowser",
+                     "revision":  "main",
+                     "sha512":  "ddb06f33d5c44766e2059a7e10e0de44c9f9214a2fd9d98218f55865e28c3df42f16138e23380b1349bf778f2b11cec16d07f6fb69d84685a0944d36e94d3c94"
+                 },
+        "name":  "32516_DICOMwebBrowser_linux_amd64_main",
+        "size":  32,
+        "updated":  "2025-12-09T18:36:26.950000+00:00"
+    },
+    {
+        "_id":  "69386c2a248e47cf98621831",
+        "baseParentId":  "69386c2a248e47cf9862182b",
+        "baseParentType":  "collection",
+        "created":  "2025-12-09T18:36:26.787000+00:00",
+        "creatorId":  "69385bb8579a5d647931a55a",
+        "description":  "Extension SlicerRT",
+        "folderId":  "69386c2a248e47cf98621830",
+        "lowerName":  "32516_slicerrt_linux_amd64_master",
+        "meta":  {
+                     "app_id":  "69386c2a248e47cf9862182d",
+                     "app_revision":  "32516",
+                     "arch":  "amd64",
+                     "baseName":  "SlicerRT",
+                     "category":  "Radiotherapy",
+                     "description":  "Extension SlicerRT",
+                     "dicom_support_rule":  [
+                                                "sop_class_uid in [\u00271.2.840.10008.5.1.4.1.1.481.3\u0027, \u00271.2.840.10008.5.1.4.1.1.481.4\u0027] or modality in [\u0027RTSTRUCT\u0027]"
+                                            ],
+                     "os":  "linux",
+                     "repository_type":  "git",
+                     "repository_url":  "https://github.com/SlicerRt/SlicerRT.git",
+                     "revision":  "master",
+                     "sha512":  "ddb06f33d5c44766e2059a7e10e0de44c9f9214a2fd9d98218f55865e28c3df42f16138e23380b1349bf778f2b11cec16d07f6fb69d84685a0944d36e94d3c94"
+                 },
+        "name":  "32516_SlicerRT_linux_amd64_master",
+        "size":  32,
+        "updated":  "2025-12-09T18:36:26.853000+00:00"
+    }
+]
