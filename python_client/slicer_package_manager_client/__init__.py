@@ -259,8 +259,7 @@ class SlicerPackageClient(GirderClient):
             app_revision=app_revision)
         if not extensions:
             # Create the extension into Girder hierarchy
-            # Separate regular params from JSON params (arrays)
-            params = {
+            extension = self.post('/app/%s/extension' % app['_id'], parameters={
                 'os': ext_os,
                 'arch': arch,
                 'baseName': name,
@@ -269,32 +268,14 @@ class SlicerPackageClient(GirderClient):
                 'revision': revision,
                 'app_revision': app_revision,
                 'description': desc,
-            }
-            # Add optional string parameters
-            if icon_url:
-                params['icon_url'] = icon_url
-            if category:
-                params['category'] = category
-            if homepage:
-                params['homepage'] = homepage
-            if screenshots:
-                params['screenshots'] = screenshots
-            if contributors:
-                params['contributors'] = contributors
-            if dependency:
-                params['dependency'] = dependency
-
-            # JSON parameters (arrays) need to be sent as JSON body
-            json_data = {}
-            if dicom_support_rule:
-                json_data['dicom_support_rule'] = dicom_support_rule
-
-            extension = self.sendRestRequest(
-                'POST',
-                '/app/%s/extension' % app['_id'],
-                parameters=params,
-                json=json_data if json_data else None
-            )
+                'icon_url': icon_url,
+                'category': category,
+                'homepage': homepage,
+                'screenshots': screenshots,
+                'contributors': contributors,
+                'dependency': dependency,
+                'dicom_support_rule' : dicom_support_rule,
+            })
 
             # Upload the extension
             self.uploadFileToItem(
@@ -324,8 +305,7 @@ class SlicerPackageClient(GirderClient):
                     progressCallback=_displayProgress)
 
                 # Update the extension into Girder hierarchy
-                # Separate regular params from JSON params (arrays)
-                params = {
+                extension = self.post('/app/%s/extension' % app['_id'], parameters={
                     'os': ext_os,
                     'arch': arch,
                     'baseName': name,
@@ -334,32 +314,14 @@ class SlicerPackageClient(GirderClient):
                     'revision': revision,
                     'app_revision': app_revision,
                     'description': desc,
-                }
-                # Add optional string parameters
-                if icon_url:
-                    params['icon_url'] = icon_url
-                if category:
-                    params['category'] = category
-                if homepage:
-                    params['homepage'] = homepage
-                if screenshots:
-                    params['screenshots'] = screenshots
-                if contributors:
-                    params['contributors'] = contributors
-                if dependency:
-                    params['dependency'] = dependency
-
-                # JSON parameters (arrays) need to be sent as JSON body
-                json_data = {}
-                if dicom_support_rule:
-                    json_data['dicom_support_rule'] = dicom_support_rule
-
-                extension = self.sendRestRequest(
-                    'POST',
-                    '/app/%s/extension' % app['_id'],
-                    parameters=params,
-                    json=json_data if json_data else None
-                )
+                    'icon_url': icon_url,
+                    'category': category,
+                    'homepage': homepage,
+                    'screenshots': screenshots,
+                    'contributors': contributors,
+                    'dependency': dependency,
+                    'dicom_support_rule': dicom_support_rule,
+                })
 
                 files = list(self.listFile(extension['_id']))
                 if len(files) == 2:
